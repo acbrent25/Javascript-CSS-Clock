@@ -9,16 +9,17 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
+        <div class="handHour hour-hand"></div>
+        <div class="handMinute min-hand"></div>
         <div class="handSecond second-hand"></div>
+        <div id="dot"></div>
       </div>
     </div>
 
 
   <style>
     html {
-      background:#018DED url(http://unsplash.it/1500/1000?image=1041&blur);
+      background:#018DED url(http://unsplash.it/1500/1000?image=1041);
       background-size:cover;
       font-family:'helvetica neue';
       text-align: center;
@@ -56,10 +57,10 @@
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
 
-    .hand {
+
+    .handHour {
       width:50%;
-      padding-top: 2px;
-      height:6px;
+      height:5px;
       background:black;
       position: absolute;
       top:50%;
@@ -67,11 +68,27 @@
       transform: rotate(90deg);
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      border-radius: 2px;
     }
+
+    .handMinute {
+      width:50%;
+      height:3px;
+      background:black;
+      position: absolute;
+      top:50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      border-radius: 2px;
+    }
+
+
 
       .handSecond {
       width:50%;
-      height:4px;
+      height:1px;
       background:black;
       position: absolute;
       top:50%;
@@ -79,7 +96,21 @@
       transform: rotate(90deg);
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      border-radius: 2px;
     }
+
+    #dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 49%;
+      left: 48.8%;
+    }
+
+
+
 
   </style>
 
